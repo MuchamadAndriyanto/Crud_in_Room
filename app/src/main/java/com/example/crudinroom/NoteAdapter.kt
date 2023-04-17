@@ -23,7 +23,8 @@ class NoteAdapter(var listNote : List<DataNote>): RecyclerView.Adapter<NoteAdapt
 
     override fun onBindViewHolder(holder: NoteAdapter.ViewHolder, position: Int) {
         holder.binding.noteId.text = listNote[position].id.toString()
-        holder.binding.noteTitle.text = listNote[position].content
+        holder.binding.noteTitle.text = listNote[position].title
+        holder.binding.noteContent.text = listNote[position].content
         holder.binding.btnDeleteNote.setOnClickListener{
             DBNote = NoteDatabase.getInstance(it.context)
 
